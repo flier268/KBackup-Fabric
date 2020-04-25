@@ -1,4 +1,8 @@
-package com.keuin.kbackupfabric.util.inctree;
+package com.keuin.kbackupfabric.diff.difftree;
+
+import com.keuin.kbackupfabric.diff.inc.IncrementalTree;
+import com.keuin.kbackupfabric.diff.inc.IncrementalTreeNode;
+import com.keuin.kbackupfabric.diff.inc.Versioned;
 
 public class Differ {
 

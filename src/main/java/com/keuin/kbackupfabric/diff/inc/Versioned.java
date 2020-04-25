@@ -1,4 +1,6 @@
-package com.keuin.kbackupfabric.util.inctree;
+package com.keuin.kbackupfabric.diff.inc;
+
+import com.keuin.kbackupfabric.diff.difftree.ModificationType;
 
 /**
  * Objects which have implemented this interface are of versions,
@@ -15,5 +17,5 @@ public interface Versioned {
      * @param versionedObject Another versioned object to compare with.
      * @return the comparision result.
      */
-    VersionComparison newerThan(Versioned versionedObject);
+    ModificationType compareWith(Versioned versionedObject);
 }

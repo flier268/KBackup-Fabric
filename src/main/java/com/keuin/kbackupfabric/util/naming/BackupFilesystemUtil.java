@@ -47,6 +47,7 @@ public final class BackupFilesystemUtil {
      * @param server the MinecraftServer instance.
      * @return true if the file exists, false if the file does not exist.
      */
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public static boolean isBackupNameValid(String backupName, MinecraftServer server) {
         File backupFile = new File(getBackupSaveDirectory(server), getBackupFileName(backupName));
         return backupFile.isFile();
