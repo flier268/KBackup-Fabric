@@ -2,7 +2,7 @@ package com.keuin.kbackupfabric.worker;
 
 import com.keuin.kbackupfabric.util.PrintUtil;
 import com.keuin.kbackupfabric.util.ZipUtil;
-import com.keuin.kbackupfabric.util.ZipUtilException;
+import com.keuin.kbackupfabric.exception.ZipUtilException;
 import net.minecraft.server.MinecraftServer;
 
 import java.io.File;

@@ -1,5 +1,6 @@
-package com.keuin.kbackupfabric.util;
+package com.keuin.kbackupfabric.util.naming;
 
+import com.keuin.kbackupfabric.util.ReflectionUtils;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ThreadedAnvilChunkStorage;
 import net.minecraft.world.World;
@@ -10,16 +11,27 @@ import java.util.regex.Pattern;
 
 /**
  * Functions deal with file name, directory name about Minecraft saves.
+ * Hide the ugly method call into this class, keeping our code tidy.
  */
 public final class BackupFilesystemUtil {
 
     private static final String backupSaveDirectoryName = "backups";
     private static final String backupFileNamePrefix = "kbackup-";
 
+    /**
+     * Get a full (not incremental) backup file name from its backupName.
+     * @param backupName the backupName.
+     * @return the backup file name.
+     */
     public static String getBackupFileName(String backupName) {
         return backupFileNamePrefix + backupName + ".zip";
     }
 
+    /**
+     * Get backupName from backup file name
+     * @param backupFileName the file name
+     * @return the backupName
+     */
     public static String getBackupName(String backupFileName) {
         try {
             if (backupFileName.matches(backupFileNamePrefix + ".+\\.zip"))
@@ -29,11 +41,22 @@ public final class BackupFilesystemUtil {
         return backupFileName;
     }
 
+    /**
+     * Check if the backup file of given backupName exists.
+     * @param backupName the backupName.
+     * @param server the MinecraftServer instance.
+     * @return true if the file exists, false if the file does not exist.
+     */
     public static boolean isBackupNameValid(String backupName, MinecraftServer server) {
         File backupFile = new File(getBackupSaveDirectory(server), getBackupFileName(backupName));
         return backupFile.isFile();
     }
 
+    /**
+     * Get the File instance of backup save directory.
+     * @param server the server.
+     * @return the file instance.
+     */
     public static File getBackupSaveDirectory(MinecraftServer server) {
         return new File(server.getRunDirectory(), backupSaveDirectoryName);
     }
@@ -60,8 +83,6 @@ public final class BackupFilesystemUtil {
             long timeStamp = BackupNameTimeFormatter.timeStringToEpochSeconds(timeString);
             System.out.println(backupFileName + " -> " + timeStamp);
             return timeStamp;
-        } else {
-            System.err.println("Failed to extract time from " + backupFileName);
         }
         return -1;
     }

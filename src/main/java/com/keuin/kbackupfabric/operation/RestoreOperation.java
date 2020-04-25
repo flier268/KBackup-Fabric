@@ -8,7 +8,7 @@ import net.minecraft.server.command.ServerCommandSource;
 
 import java.io.File;
 
-import static com.keuin.kbackupfabric.util.BackupFilesystemUtil.*;
+import static com.keuin.kbackupfabric.util.naming.BackupFilesystemUtil.*;
 
 class RestoreOperation extends AbstractConfirmableOperation {
 

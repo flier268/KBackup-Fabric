@@ -3,7 +3,7 @@ package com.keuin.kbackupfabric.worker;
 import com.keuin.kbackupfabric.metadata.BackupMetadata;
 import com.keuin.kbackupfabric.util.PrintUtil;
 import com.keuin.kbackupfabric.util.ZipUtil;
-import com.keuin.kbackupfabric.util.ZipUtilException;
+import com.keuin.kbackupfabric.exception.ZipUtilException;
 import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.keuin.kbackupfabric.util.BackupFilesystemUtil.*;
+import static com.keuin.kbackupfabric.util.naming.BackupFilesystemUtil.*;
 import static com.keuin.kbackupfabric.util.PrintUtil.msgInfo;
 
 /**

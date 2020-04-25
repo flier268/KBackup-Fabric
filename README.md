@@ -19,6 +19,7 @@ commands:
 
 To-Do List:
 
+- Auto restart after restoring.
 - Refactor code.
 - More thorough test.
 - Implement incremental backup.
@@ -26,6 +27,10 @@ To-Do List:
         - Implement unZipRecursively (unzip a .zip.inc file recursively until reaches the root (i.e. the last full backup).)
     + Backup: base-diff (select most recently backup as the base, then diff)
         - Implement zipDiff (make a new zip with the latest backup as the base, store diff-table in zip comment (A:Add, M:Modification, D:Deletion))
+    + Delete:
+        - Deleting a non-incremental backup: perform dependency check on all .zip.inc files.
+        - Deleting an incremental backup: merge into the next (if exists) backup. If the deleted backup is the last one, just delete it.
+    + Multi-delete (range-delete): merge a consistent sequence of backup into the next backup (if exists). If the sequence reaches the latest backup, just delete them.
 - Optimize help menu. (colored command help menu)
 - Add op login hint in the next start after restoring.
 - Implement incremental backup.

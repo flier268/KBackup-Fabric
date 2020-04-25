@@ -1,11 +1,11 @@
-package com.keuin.kbackupfabric;
+package com.keuin.kbackupfabric.command;
 
 import com.keuin.kbackupfabric.metadata.BackupMetadata;
 import com.keuin.kbackupfabric.metadata.MetadataHolder;
 import com.keuin.kbackupfabric.operation.AbstractConfirmableOperation;
-import com.keuin.kbackupfabric.util.BackupFilesystemUtil;
-import com.keuin.kbackupfabric.util.BackupNameSuggestionProvider;
-import com.keuin.kbackupfabric.util.BackupNameTimeFormatter;
+import com.keuin.kbackupfabric.util.naming.BackupFilesystemUtil;
+import com.keuin.kbackupfabric.suggestion.BackupNameSuggestionProvider;
+import com.keuin.kbackupfabric.util.naming.BackupNameTimeFormatter;
 import com.keuin.kbackupfabric.util.PrintUtil;
 import com.keuin.kbackupfabric.worker.BackupWorker;
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -19,10 +19,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import static com.keuin.kbackupfabric.util.BackupFilesystemUtil.*;
+import static com.keuin.kbackupfabric.util.naming.BackupFilesystemUtil.*;
 import static com.keuin.kbackupfabric.util.PrintUtil.*;
 
-public final class KBCommands {
+public final class CommandMain {
 
 
     private static final int SUCCESS = 1;

@@ -1,4 +1,4 @@
-package com.keuin.kbackupfabric.util;
+package com.keuin.kbackupfabric.util.naming;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -10,6 +10,7 @@ public class BackupNameTimeFormatter {
 
     public static String getTimeString() {
         return LocalDateTime.now().format(formatter);
+
     }
 
     public static long timeStringToEpochSeconds(String timeString) {

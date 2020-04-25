@@ -1,5 +1,6 @@
-package com.keuin.kbackupfabric.util;
+package com.keuin.kbackupfabric.suggestion;
 
+import com.keuin.kbackupfabric.util.naming.BackupFilesystemUtil;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
